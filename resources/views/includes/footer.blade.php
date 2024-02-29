@@ -29,6 +29,7 @@
     <!-- ======== main-wrapper end =========== -->
 
     <!-- ========= All Javascript files linkup ======== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/Chart.min.js')}}"></script>
     <script src="{{asset('js/dynamic-pie-chart.js')}}"></script>
@@ -38,6 +39,7 @@
     <script src="{{asset('js/world-merc.js')}}"></script>
     <script src="{{asset('js/polyfill.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
 
     <script>
       // ======== jvectormap activation
@@ -419,6 +421,23 @@
         },
       });
         // =========== chart four end
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#roleTable").DataTable();
+
+        $("#userTable").DataTable();
+
+        $("#categoryTable").DataTable();
+
+        $("#subCatTable").DataTable();
+
+        $(".deleteBtn").click(function() {
+          if (!confirm('Are you sure?')) {
+            return false;
+          }
+        })
+      });
     </script>
   </body>
 </html>

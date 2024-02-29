@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('css/fullcalendar.css')}}" />
     <link rel="stylesheet" href="{{asset('css/fullcalendar.css')}}" />
     <link rel="stylesheet" href="{{asset('css/main.css')}}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
   </head>
   <body>
     <!-- ======== Preloader =========== -->
@@ -52,10 +53,10 @@
             </a>
             <ul id="ddmenu_2" class="collapse dropdown-nav">
               <li>
-                <a href=""> Roles </a>
+                <a href="{{ url('roles') }}"> Roles </a>
               </li>
               <li>
-                <a href=""> Users </a>
+                <a href="{{ url('listUser') }}"> Users </a>
               </li>
             </ul>
           </li>
@@ -73,10 +74,10 @@
             </a>
             <ul id="ddmenu_3" class="collapse dropdown-nav">
               <li>
-                <a href=""> Categories </a>
+                <a href="{{ url('categories') }}"> Categories </a>
               </li>
               <li>
-                <a href=""> Sub Categories </a>
+                <a href="{{ url('subCategories') }}"> Sub Categories </a>
               </li>
               <li>
                 <a href=""> Child Categories </a>

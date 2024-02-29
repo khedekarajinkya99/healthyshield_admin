@@ -49,7 +49,7 @@
                 <div class="form-wrapper">
                   <h6 class="mb-15">Sign In Below</h6>
                   <form action="{{ url('auth') }}" method="POST">
-                    @csrf;
+                    @csrf
                     <div class="row">
                       <div class="col-12">
                         <div class="input-style-1">

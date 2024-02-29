@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('meta_keyword');
             $table->string('tags')->nullable();
             $table->string('slug');
-            $table->text('seo_desctiption');
+            $table->text('seo_description');
             $table->string('shop_type');
             $table->timestamps();
         });
