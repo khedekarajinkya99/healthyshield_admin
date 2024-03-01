@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChildCategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -54,3 +55,9 @@ Route::post('subCatCreate', [SubCategoriesController::class, 'subCatCreate']);
 Route::get('viewSubCategories/{id}', [SubCategoriesController::class, 'viewSubCategories']);
 Route::get('editSubCategories/{id}', [SubCategoriesController::class, 'editSubCategories']);
 Route::get('deleteSubCategories/{id}', [SubCategoriesController::class, 'deleteSubCategories']);
+
+Route::get('childCategories', [ChildCategoriesController::class, 'childCategories']);
+Route::get('childCategoriesAdd', [ChildCategoriesController::class, 'childCategoriesAdd']);
+Route::get('viewChildCategories/{id}', [ChildCategoriesController::class, 'viewChildCategories']);
+Route::get('editChildCategories/{id}', [ChildCategoriesController::class, 'editChildCategories']);
+Route::get('deleteChildCategories/{id}', [ChildCategoriesController::class, 'deleteChildCategories']);

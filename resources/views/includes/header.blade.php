@@ -36,7 +36,7 @@
             <a href="{{ url('dashboard') }}">
               <span class="text">Dashboard</span>
             </a>
-            
+
           </li>
           <li class="nav-item nav-item-has-children">
             <a
@@ -48,7 +48,7 @@
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              
+
               <span class="text">User Management</span>
             </a>
             <ul id="ddmenu_2" class="collapse dropdown-nav">
@@ -80,7 +80,7 @@
                 <a href="{{ url('subCategories') }}"> Sub Categories </a>
               </li>
               <li>
-                <a href=""> Child Categories </a>
+                <a href="{{ url('childCategories') }}"> Child Categories </a>
               </li>
               <li>
                 <a href=""> Manufracture </a>
