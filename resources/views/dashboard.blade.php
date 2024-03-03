@@ -119,18 +119,6 @@
 						<div class="left">
 							<h6 class="text-medium mb-30">Sales/Revenue</h6>
 						</div>
-						<div class="right">
-							<div class="select-style-1">
-								<div class="select-position select-sm">
-									<select class="light-bg">
-										<option value="">Yearly</option>
-										<option value="">Monthly</option>
-										<option value="">Weekly</option>
-									</select>
-								</div>
-							</div>
-
-						</div>
 					</div>
 
 					<div class="chart">

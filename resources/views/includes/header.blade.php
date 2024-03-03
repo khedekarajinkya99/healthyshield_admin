@@ -83,18 +83,18 @@
                 <a href="{{ url('childCategories') }}"> Child Categories </a>
               </li>
               <li>
-                <a href=""> Manufracture </a>
+                <a href="{{ url('manufracture') }}"> Manufracture </a>
               </li>
               <li>
-                <a href=""> Product </a>
+                <a href="{{ url('products') }}"> Product </a>
               </li>
               <li>
-                <a href=""> Product Inventories </a>
+                <a href="{{ url('productInventories') }}"> Product Inventories </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="">
+            <a href="{{ url('orders') }}">
               <span class="text">Orders </span>
             </a>
           </li>

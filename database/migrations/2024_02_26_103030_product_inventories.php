@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('product_inventories', function (Blueprint $table) {
             $table->id();
             $table->integer('product_id');
+            $table->integer('available_stock');
             $table->integer('total_stock');
             $table->integer('sold_stock');
             $table->integer('new_stock');

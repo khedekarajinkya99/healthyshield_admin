@@ -7,7 +7,7 @@
 			<div class="row align-items-center">
 				<div class="col-md-6">
 					<div class="title">
-						<h2>Add Child Categories</h2>
+						<h2>Add Brand</h2>
 					</div>
 				</div>
 				<!-- end col -->
@@ -18,9 +18,9 @@
 								<li class="breadcrumb-item">
 									<a href="{{ url('dashboard') }}">Dashboard</a>
 								</li>
-								<li class="breadcrumb-item"><a href="{{ url('childCategories') }}">List Sub Categories</a></li>
+								<li class="breadcrumb-item"><a href="{{ url('manufracture') }}">List Brands</a></li>
 								<li class="breadcrumb-item active" aria-current="page">
-									Add Child Categories
+									Add Brand
 								</li>
 							</ol>
 						</nav>
@@ -40,30 +40,23 @@
 		@endif
 		<!-- ========== form-elements-wrapper start ========== -->
 		<div class="form-elements-wrapper">
-			<form action="{{ url('childCatCreate') }}" method="POST" enctype="multipart/form-data">
+			<form action="{{ url('brandCreate') }}" method="POST" enctype="multipart/form-data">
 				@csrf
 				<div class="row">
 					<div class="col-lg-6">
 						<!-- input style start -->
 						<div class="card-style mb-30">
 							<div class="input-style-1">
-								<label>Child Cat Name</label>
-								<input type="text" placeholder="Child Cat Name" name="child_cat_name" required autocomplete="off" />
+								<label>Brand Name</label>
+								<input type="text" placeholder="Brand Name" name="brand_name" required autocomplete="off" value="{{ $brands->brand_name }}" />
 							</div>
-							@error('child_cat_name')
-	                          <div class="alert alert-danger" role="alert">{{ $message }}</div>
-	                        @enderror
-
-	                        <div class="input-style-1">
-								<label>Description</label>
-								<textarea rows="5" name="description" required placeholder="Description"></textarea>
-							</div>
-							@error('description')
+							@error('brand_name')
 	                          <div class="alert alert-danger" role="alert">{{ $message }}</div>
 	                        @enderror
 
 	                        <div class="input-style-1">
 								<label>Image</label>
+								<img src="{{ asset('uploads/brand') }}/{{ $brands->brand_icon }}" width="150px" height="150px">
 								<input type="file" name="image" autocomplete="off" />
 							</div>
 							@error('image')
@@ -75,42 +68,16 @@
 			                    <div class="select-position">
 			                    	<select name="status" required>
 			                        	<option value="">Select Status</option>
-			                        	<option value="New">New</option>
-			                        	<option value="Active">Active</option>
-			                        	<option value="Block">Block</option>
+			                        	<option value="New" @if ($brands->status == 'New') selected @endif>New</option>
+			                        	<option value="Active" @if ($brands->status == 'Active') selected @endif>Active</option>
+			                        	<option value="Block" @if ($brands->status == 'Block') selected @endif>Block</option>
 			                      	</select>
 			                    </div>
 			                 </div>
 			                @error('status')
 	                          <div class="alert alert-danger" role="alert">{{ $message }}</div>
 	                        @enderror
-
-	                        <div class="select-style-1">
-			                    <label>Categories</label>
-			                    <div class="select-position">
-			                    	<select name="categories" id="categories" required>
-			                        	<option value="">Select Categories</option>
-			                        	@foreach ($categories as $val)
-			                        	<option value="{{ $val->id }}">{{ $val->category_name }}</option>
-			                        	@endforeach
-			                      	</select>
-			                    </div>
-			                 </div>
-			                @error('categories')
-	                          <div class="alert alert-danger" role="alert">{{ $message }}</div>
-	                        @enderror
-
-	                        <div class="select-style-1">
-			                    <label>Sub Categories</label>
-			                    <div class="select-position">
-			                    	<select name="sub_categories" id="sub_categories" required>
-			                        	<option value="">Select Sub Categories</option>
-			                      	</select>
-			                    </div>
-			                 </div>
-			                @error('sub_categories')
-	                          <div class="alert alert-danger" role="alert">{{ $message }}</div>
-	                        @enderror
+	                        <input type="hidden" name="id" value="{{ $brands->id }}">
 							<!-- end input -->
 							<div class="button-group">
 								<button type="submit" class="main-btn primary-btn btn-hover">Submit</button>

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
-            $table->integer('brand_name');
+            $table->string('brand_name');
             $table->string('brand_icon')->nullable();
             $table->string('status');
             $table->timestamps();

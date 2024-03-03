@@ -42,15 +42,6 @@
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
 
     <script>
-      // ======== jvectormap activation
-      var markers = [
-        { name: "Egypt", coords: [26.8206, 30.8025] },
-        { name: "Russia", coords: [61.524, 105.3188] },
-        { name: "Canada", coords: [56.1304, -106.3468] },
-        { name: "Greenland", coords: [71.7069, -42.6043] },
-        { name: "Brazil", coords: [-14.235, -51.9253] },
-      ];
-      // ====== calendar activation
       document.addEventListener("DOMContentLoaded", function () {
         var calendarMiniEl = document.getElementById("calendar-mini");
         var calendarMini = new FullCalendar.Calendar(calendarMiniEl, {
@@ -184,243 +175,6 @@
         },
       });
       // =========== chart two end
-
-      // =========== chart three start
-      const ctx3 = document.getElementById("Chart3").getContext("2d");
-      const chart3 = new Chart(ctx3, {
-        type: "line",
-        data: {
-          labels: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
-          ],
-          datasets: [
-            {
-              label: "Revenue",
-              backgroundColor: "transparent",
-              borderColor: "#365CF5",
-              data: [80, 120, 110, 100, 130, 150, 115, 145, 140, 130, 160, 210],
-              pointBackgroundColor: "transparent",
-              pointHoverBackgroundColor: "#365CF5",
-              pointBorderColor: "transparent",
-              pointHoverBorderColor: "#365CF5",
-              pointHoverBorderWidth: 3,
-              pointBorderWidth: 5,
-              pointRadius: 5,
-              pointHoverRadius: 8,
-              fill: false,
-              tension: 0.4,
-            },
-            {
-              label: "Profit",
-              backgroundColor: "transparent",
-              borderColor: "#9b51e0",
-              data: [
-                120, 160, 150, 140, 165, 210, 135, 155, 170, 140, 130, 200,
-              ],
-              pointBackgroundColor: "transparent",
-              pointHoverBackgroundColor: "#9b51e0",
-              pointBorderColor: "transparent",
-              pointHoverBorderColor: "#9b51e0",
-              pointHoverBorderWidth: 3,
-              pointBorderWidth: 5,
-              pointRadius: 5,
-              pointHoverRadius: 8,
-              fill: false,
-              tension: 0.4,
-            },
-            {
-              label: "Order",
-              backgroundColor: "transparent",
-              borderColor: "#f2994a",
-              data: [180, 110, 140, 135, 100, 90, 145, 115, 100, 110, 115, 150],
-              pointBackgroundColor: "transparent",
-              pointHoverBackgroundColor: "#f2994a",
-              pointBorderColor: "transparent",
-              pointHoverBorderColor: "#f2994a",
-              pointHoverBorderWidth: 3,
-              pointBorderWidth: 5,
-              pointRadius: 5,
-              pointHoverRadius: 8,
-              fill: false,
-              tension: 0.4,
-            },
-          ],
-        },
-        options: {
-          plugins: {
-            tooltip: {
-              intersect: false,
-              backgroundColor: "#fbfbfb",
-              titleColor: "#8F92A1",
-              bodyColor: "#272727",
-              titleFont: {
-                size: 16,
-                family: "Plus Jakarta Sans",
-                weight: "400",
-              },
-              bodyFont: {
-                family: "Plus Jakarta Sans",
-                size: 16,
-              },
-              multiKeyBackground: "transparent",
-              displayColors: false,
-              padding: {
-                x: 30,
-                y: 15,
-              },
-              borderColor: "rgba(143, 146, 161, .1)",
-              borderWidth: 1,
-              enabled: true,
-            },
-            title: {
-              display: false,
-            },
-            legend: {
-              display: false,
-            },
-          },
-          layout: {
-            padding: {
-              top: 0,
-            },
-          },
-          responsive: true,
-          // maintainAspectRatio: false,
-          legend: {
-            display: false,
-          },
-          scales: {
-            y: {
-              grid: {
-                display: false,
-                drawTicks: false,
-                drawBorder: false,
-              },
-              ticks: {
-                padding: 35,
-              },
-              max: 350,
-              min: 50,
-            },
-            x: {
-              grid: {
-                drawBorder: false,
-                color: "rgba(143, 146, 161, .1)",
-                drawTicks: false,
-                zeroLineColor: "rgba(143, 146, 161, .1)",
-              },
-              ticks: {
-                padding: 20,
-              },
-            },
-          },
-        },
-      });
-      // =========== chart three end
-
-      // ================== chart four start
-      const ctx4 = document.getElementById("Chart4").getContext("2d");
-      const chart4 = new Chart(ctx4, {
-        type: "bar",
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-          datasets: [
-            {
-              label: "",
-              backgroundColor: "#365CF5",
-              borderColor: "transparent",
-              borderRadius: 20,
-              borderWidth: 5,
-              barThickness: 20,
-              maxBarThickness: 20,
-              data: [600, 700, 1000, 700, 650, 800],
-            },
-            {
-              label: "",
-              backgroundColor: "#d50100",
-              borderColor: "transparent",
-              borderRadius: 20,
-              borderWidth: 5,
-              barThickness: 20,
-              maxBarThickness: 20,
-              data: [690, 740, 720, 1120, 876, 900],
-            },
-          ],
-        },
-        options: {
-          plugins: {
-            tooltip: {
-              backgroundColor: "#F3F6F8",
-              titleColor: "#8F92A1",
-              titleFontSize: 12,
-              bodyColor: "#171717",
-              bodyFont: {
-                weight: "bold",
-                size: 16,
-              },
-              multiKeyBackground: "transparent",
-              displayColors: false,
-              padding: {
-                x: 30,
-                y: 10,
-              },
-              bodyAlign: "center",
-              titleAlign: "center",
-              enabled: true,
-            },
-            legend: {
-              display: false,
-            },
-          },
-          layout: {
-            padding: {
-              top: 0,
-            },
-          },
-          responsive: true,
-          // maintainAspectRatio: false,
-          title: {
-            display: false,
-          },
-          scales: {
-            y: {
-              grid: {
-                display: false,
-                drawTicks: false,
-                drawBorder: false,
-              },
-              ticks: {
-                padding: 35,
-                max: 1200,
-                min: 0,
-              },
-            },
-            x: {
-              grid: {
-                display: false,
-                drawBorder: false,
-                color: "rgba(143, 146, 161, .1)",
-                zeroLineColor: "rgba(143, 146, 161, .1)",
-              },
-              ticks: {
-                padding: 20,
-              },
-            },
-          },
-        },
-      });
-        // =========== chart four end
     </script>
     <script type="text/javascript">
       $(document).ready(function() {
@@ -432,11 +186,94 @@
 
         $("#subCatTable").DataTable();
 
+        $("#childCatTable").DataTable();
+
+        $("#brandTable").DataTable();
+
+        $("#productTable").DataTable();
+
         $(".deleteBtn").click(function() {
           if (!confirm('Are you sure?')) {
             return false;
           }
-        })
+        });
+
+        let subCat = $("#subCat").val();
+        let subCatId = $("#subCatId").val();
+
+        if (subCat != undefined && subCatId != undefined) {
+          var html = "<option value="+subCatId+" selected>"+subCat+"</option>";
+          $("#sub_categories").html(html);
+        }
+
+        $("#categories").change(function() {
+          var cat_id = $(this).val();
+          var html = "<option value=''>Select Sub Categories</option>";
+          var subCatId = $("#subCatId").val();
+          if (cat_id == "") {
+            $("#sub_categories").html(html);
+          } else {
+            $.ajax({
+              url:"{{ url('getSubCategory') }}/"+cat_id,
+              type:"GET",
+              success:function(response) {
+                $.each(response.data, function(key, value) {
+                  if (subCatId != undefined) {
+                    if (subCatId == value.id) {
+                      html += "<option value="+value.id+" selected>"+value.sub_category_name+"</option>";
+                    } else {
+                      html += "<option value="+value.id+">"+value.sub_category_name+"</option>";
+                    }
+                    
+                  } else {
+                    html += "<option value="+value.id+">"+value.sub_category_name+"</option>";
+                  }
+                });
+
+                $("#sub_categories").html(html);
+              }
+            })
+          }
+        });
+
+        let childCat = $("#childCatName").val();
+        let childCatId = $("#childCatId").val();
+
+        if (childCat != undefined && childCatId != undefined) {
+          var html = "<option value="+childCatId+" selected>"+childCat+"</option>";
+          $("#child_categories").html(html);
+        }
+
+        $("#sub_categories").change(function() {
+          var sub_cat_id = $(this).val();
+          var html = "<option value=''>Select Child Categories</option>";
+          var childCatId = $("#childCatId").val();
+          if (sub_cat_id == "") {
+            $("#child_categories").html(html);
+          } else {
+            $.ajax({
+              url:"{{ url('getChildCategory') }}/"+sub_cat_id,
+              type:"GET",
+              success:function(response) {
+                $.each(response.data, function(key, value) {
+                  if (childCatId != undefined) {
+                    if (childCatId == value.id) {
+                      html += "<option value="+value.id+" selected>"+value.child_category_name+"</option>";
+                    } else {
+                      html += "<option value="+value.id+">"+value.child_category_name+"</option>";
+                    }
+                    
+                  } else {
+                    html += "<option value="+value.id+">"+value.child_category_name+"</option>";
+                  }
+                });
+
+                $("#child_categories").html(html);
+              }
+            })
+          }
+        });
+
       });
     </script>
   </body>

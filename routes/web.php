@@ -7,6 +7,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\SubCategoriesController;
+use App\Http\Controllers\ManufractureController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +61,36 @@ Route::get('deleteSubCategories/{id}', [SubCategoriesController::class, 'deleteS
 
 Route::get('childCategories', [ChildCategoriesController::class, 'childCategories']);
 Route::get('childCategoriesAdd', [ChildCategoriesController::class, 'childCategoriesAdd']);
+Route::post('childCatCreate', [ChildCategoriesController::class, 'childCatCreate']);
 Route::get('viewChildCategories/{id}', [ChildCategoriesController::class, 'viewChildCategories']);
 Route::get('editChildCategories/{id}', [ChildCategoriesController::class, 'editChildCategories']);
 Route::get('deleteChildCategories/{id}', [ChildCategoriesController::class, 'deleteChildCategories']);
+Route::get('getSubCategory/{id}', [ChildCategoriesController::class, 'getSubCategory']);
+
+Route::get('manufracture', [ManufractureController::class, 'manufracture']);
+Route::get('manufracturerAdd', [ManufractureController::class, 'manufracturerAdd']);
+Route::post('brandCreate', [ManufractureController::class, 'brandCreate']);
+Route::get('viewManufracturer/{id}', [ManufractureController::class, 'viewManufracturer']);
+Route::get('editManufracturer/{id}', [ManufractureController::class, 'editManufracturer']);
+Route::get('deleteManufracturer/{id}', [ManufractureController::class, 'deleteManufracturer']);
+
+Route::get('products', [ProductController::class, 'products']);
+Route::get('productAdd', [ProductController::class, 'productAdd']);
+Route::get('getChildCategory/{id}', [ChildCategoriesController::class, 'getChildCategory']);
+Route::post('productCreate', [ProductController::class, 'productCreate']);
+Route::get('deleteProduct/{id}', [ProductController::class, 'deleteProduct']);
+Route::get('viewProduct/{id}',[ProductController::class, 'viewProduct']);
+Route::get('editProduct/{id}',[ProductController::class, 'editProduct']);
+Route::get('productInventories', [ProductController::class, 'productInventories']);
+Route::get('addInventorie', [ProductController::class, 'addInventorie']);
+Route::post('createInventorie', [ProductController::class, 'createInventorie']);
+Route::get('viewInventorie/{id}', [ProductController::class, 'viewInventorie']);
+Route::get('editInventorie/{id}', [ProductController::class, 'editInventorie']);
+Route::get('deleteInventorie/{id}', [ProductController::class, 'deleteInventorie']);
+
+Route::get('orders', [OrderController::class, 'orders']);
+Route::get('orderAdd', [OrderController::class, 'orderAdd']);
+Route::post('orderCreate', [OrderController::class, 'orderCreate']);
+Route::get('viewOrder/{id}', [OrderController::class, 'viewOrder']);
+Route::get('editOrder/{id}', [OrderController::class, 'editOrder']);
+Route::get('deleteOrder/{id}', [OrderController::class, 'deleteOrder']);
