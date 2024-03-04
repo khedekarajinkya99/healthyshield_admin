@@ -190,7 +190,7 @@
 
 							<div class="input-style-1">
 								<label>Weight</label>
-								<input type="text" placeholder="Weight" name="weight" required autocomplete="off" />
+								<input type="number" placeholder="Weight" name="weight" required autocomplete="off" />
 							</div>
 							@error('weight')
 	                          <div class="alert alert-danger" role="alert">{{ $message }}</div>

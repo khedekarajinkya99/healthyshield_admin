@@ -10,6 +10,7 @@ use App\Http\Controllers\SubCategoriesController;
 use App\Http\Controllers\ManufractureController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/', function () {
 });
 Route::post('auth', [AuthController::class, 'auth']);
 Route::get('dashboard', [DashboardController::class, 'dashboard']);
+Route::get('getChartData', [DashboardController::class, 'getChartData']);
 
 //Role routes
 Route::get('roles', [RegistrationController::class, 'roles']);
@@ -94,3 +96,10 @@ Route::post('orderCreate', [OrderController::class, 'orderCreate']);
 Route::get('viewOrder/{id}', [OrderController::class, 'viewOrder']);
 Route::get('editOrder/{id}', [OrderController::class, 'editOrder']);
 Route::get('deleteOrder/{id}', [OrderController::class, 'deleteOrder']);
+
+Route::get('customers', [CustomerController::class, 'customers']);
+Route::get('customerAdd', [CustomerController::class, 'customerAdd']);
+Route::post('customerCreate', [CustomerController::class, 'customerCreate']);
+Route::get('viewCustomer/{id}', [CustomerController::class, 'viewCustomer']);
+Route::get('editCustomer/{id}', [CustomerController::class, 'editCustomer']);
+Route::get('deleteCustomer/{id}', [CustomerController::class, 'deleteCustomer']);

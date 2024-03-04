@@ -98,6 +98,11 @@
               <span class="text">Orders </span>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('customers') }}">
+              <span class="text">Customer </span>
+            </a>
+          </li>
         </ul>
       </nav>
     </aside>
